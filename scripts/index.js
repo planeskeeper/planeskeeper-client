@@ -21,8 +21,6 @@ var app = app || {}
 
 })(app);
 
-<<<<<<< HEAD
-=======
 $(document).ready(function () {
 
     $(".cross").hide();
@@ -43,4 +41,3 @@ $(document).ready(function () {
 
 });
 
->>>>>>> 1a28c87dca4fc0f659340148bb791a13d3d08cdb
