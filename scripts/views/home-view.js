@@ -9,8 +9,19 @@ var app = app || {};
     app.showOnly('home'); 
   };
 
+  let getCardsApi = function (event) {
+    event.preventDefault();
+    var cardName = $('#card-name-search').val();
+    $.getJSON(`https://api.magicthegathering.io/v1/cards?name=${cardName}`, function (json) {
+      console.log(json.cards); 
+      app.Card.loadAll('search', json.cards); 
+    });
+  };
+
   // listner for main page search
+  $('#search-button').click(getCardsApi);
   //  $('#search-all').on('click', searchAll);
+
 
   //  function searchAll(e) { // currently just stubbed out. 
   //    e.preventDefault();
