@@ -1,5 +1,13 @@
 *
-
 h1 {
     text-align: center;
+    color: aliceblue;
+}
+.card-template {
+    position:absolute;
+    left:50%; 
+    top:50%;
+}
+p{
+    color: aliceblue;
 }
