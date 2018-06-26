@@ -19,8 +19,7 @@ var app = app || {};
   // Card.all = []; // temporary place holder.  
 
   Card.prototype.toHtml = function (output) {
-    console.log('We are in .toHtml');
-    if (output !== 'user' || 'search') {
+    if (output !== 'user' && output !== 'search') {
       app.errorCallback('Card.toHtml called with paramater not equal to "user" or "search" ');
     } else {
       if (output = 'search') {
@@ -35,8 +34,6 @@ var app = app || {};
   } // end prototype.toHtml
 
   Card.loadAll = (source, rows) => {
-    console.log(`loadAll was called for ${source}`); 
-    if (source == 'search') console.log(`with these inputs ${rows}`);
     if (source !== 'user' && source !== 'search') {
       app.errorCallback('Card.loadAll called with first paramater not equal to "user" or "search" ');
     } else { // sort, instantiate, put in appropriate list

@@ -8,13 +8,11 @@
   <link rel="stylesheet" type="text/css" href="styles/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 
-  <script id="card-list-template" type="text/x-handlebars-template">
-    
-        <div>
-              <img src="{{imageUrl}}" />
-        </div>
-
-</script>
+  <script id="card-template" type="text/x-handlebars-template">
+    <article id="{{{card_id}}}">
+        <img src="{{{image_url}}}"/>
+    </article>
+  </script>
 
 </head>
 <body>
@@ -35,12 +33,14 @@
         <li class="tab user-logoff" data-content="logoff"><a href="#">Logoff</a></li>
       </ul>
     </nav>
+
       <!-- <button class="hamburger">&#9776;</button> -->
       <!-- <button class="cross">&#735;</button> -->
   </header>  
   <main>
     <section class="home view">
       <h2>Home View Page</h2>
+
       <form id="card-search">
         <label>Search by name:
           <input id="card-name-search" type="text"/>
@@ -60,10 +60,49 @@
     </section><!-- end .login .view -->
     <section class="about view">
       <h2>About View Page</h2>
-
+      <h1 id="aboutHeader">Meet the Planes Keeper Dev team</h1>
+      <div id="allCards">
+        <!-- kelly card -->
+        <div id="f1_container">
+          <div id="f1_card" class="shadow">
+            <div class="front face">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg" />
+            </div>
+            <div class="back face center">
+              <img id="kelly" src="images/kelly.jpeg" />
+              <p><a href="https://github.com/cornerkick87">Github</a></p>
+              <p><a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- tyler card-->
+        <div id="f1_container">
+          <div id="f1_card" class="shadow">
+            <div class="front face">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg" />
+            </div>
+            <div class="back face center">
+              <img id="tyler" src="images/tyler.jpeg" />
+              <p><a href="https://github.com/cornerkick87">Github</a></p>
+              <p><a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- chris card -->
+        <div id="f1_container">
+          <div id="f1_card" class="shadow">
+            <div class="front face">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg" />
+            </div>
+            <div class="back face center">
+              <img id="chris" src="images/chris.jpeg" />
+              <p><a href="https://github.com/cornerkick87">Github</a></p>
+              <p><a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section><!-- end .about .view -->
-
-
 
     <!-- <section class="single view"> -->
       <!-- <h2>In case we need to view a page for a single card</h2> -->
@@ -85,7 +124,6 @@
   <script src="scripts/views/home-view.js"></script>
   <script src="scripts/views/user-view.js"></script>
   <script src="scripts/views/login-view.js"></script>
-  <script src="scripts/models/cards.js"></script>
 
   <!-- <script src="scripts/views/single-view.js"></script> -->
   <!-- <script src="scripts/views/deck-view.js"></script> -->
