@@ -2,11 +2,11 @@
 
 var app = app || {};
 
-(function(module){ // start IIFE
-  let cardView = {}; 
+(function (module) { // start IIFE
+  let cardView = {};
   cardView.initIndexPage = () => {
-    console.log('init Index Page'); 
-    app.showOnly('home'); 
+    console.log('init Index Page');
+    app.showOnly('home');
   };
 
   // listner for main page search
@@ -17,7 +17,7 @@ var app = app || {};
   //    console.log('You clicked on Search All');
   //   //  $.get();  
   //  } // end searchAll
- 
+
   // listner for action on each card in search result list  
   // $('article').on('click', '.card-in-list', e => {
   //   let idChoice = `${$(this).attr('id')}`; 
@@ -26,6 +26,12 @@ var app = app || {};
   //   console.log(`Your action: ${action}`); 
   // }); // end listner for each card in search result list
 
+  cardView.searchTemplate = cardObj => {
+    console.log('search template called');
+    let template = Handlebars.compile($('#card-template').text());
+    console.log(template);
+    return template(cardObj);
+  };
 
   module.cardView = cardView;
 })(app); // end IIFE

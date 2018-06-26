@@ -1,12 +1,20 @@
+.indexHeader {
+  font-size: 75px;
+  color:whitesmoke;
+}
+nav #menu{
+  display: inline-block;
+}
 body {
   background-image: url("https://az616578.vo.msecnd.net/files/2016/06/25/636024823157923300797171718_39307_magic_the_gathering.jpg");
+  position: fixed;
 
 }
+
 #aboutHeader {
   text-align: center;
   font-size: medium;
   color:whitesmoke;
-  text-shadow: color1 x1 y1 blur1, color2 x2 y2 blur2;
 }
 
 /* kelly card */
@@ -146,7 +154,7 @@ body {
 
 
 
-  /* burger button */
+  /* burger button
   .hamburger{
     background:none;
     position:absolute;
@@ -184,14 +192,14 @@ body {
   .menu ul li a { text-decoration:none;  margin: 0px; color:#666;}
   .menu ul li a:hover {  color: #666; text-decoration:none;}
   .menu a{text-decoration:none; color:#666;}
-  .menu a:hover{text-decoration:none; color:#666;}
+  .menu a:hover{text-decoration:none; color:#666;} */
   
-  .glyphicon-home{
+  /* .glyphicon-home{
     color:white; 
     font-size:1.5em; 
     margin-top:5px; 
     margin:0 auto;
-  }
-  header{display:inline-block; font-size:12px;}
+  } */
+  /* header{display:inline-block; font-size:12px;}
   span{padding-left:20px;}
-  a{color:#336699;}
+  a{color:#336699;} */

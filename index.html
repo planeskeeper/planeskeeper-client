@@ -1,73 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PlanesKeeper</title>
-  <link rel="stylesheet" type="text/css" href="styles/reset.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PlanesKeeper</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/module.css" />
+    <link rel="stylesheet" href="text/css" media="screen" href="">
+    <script src="scripts/index.js"></script>
+
+    <script id="card-template" type="text/x-handlebars-template">
+        <article id="{{{card_id}}}">
+            <img src="{{{image_url}}}"/>
+        </article>
+      </script>
 
 </head>
+
 <body>
-  <header>
-    <h1>Planes Keeper</h1>
-    <nav class="menu">
-      <ul>
-        <li class="tab" data-content="home"><a href="#">Home</a></li>
-        <li class="tab" data-content="user"><a href="#">User</a></li>
-        <li class="tab" data-content="about"><a href="#">About</a></li>
-      </ul>
-    </nav>
-    <img alt="Planes Keeper Header Logo" name="Planes Keeper Logo"
-      src="http://via.placeholder.com/60x60" />  
-    <nav class="menu">
-      <ul>
-        <li class="tab user-login" data-content="login"><a href="#">Login</a></li>
-        <li class="tab user-logoff" data-content="logoff"><a href="#">Logoff</a></li>
-      </ul>
-    </nav>
-      <!-- <button class="hamburger">&#9776;</button> -->
-      <!-- <button class="cross">&#735;</button> -->
-  </header>  
-  <main>
-    <section class="home view">
-      <h2>Home View Page</h2>
+    <header>
+        <h1 class="indexHeader">Planes Keeper</h1>
+        <nav class="menu">
+            <ul>
+                <li class="tab" data-content="home">
+                    <a href="#">Home</a>
+                </li>
+                <li class="tab" data-content="user">
+                    <a href="#">User</a>
+                </li>
+                <li class="tab" data-content="about">
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
 
-    </section><!-- end .home .view -->
-    <section class="user view">
-      <h2>User View - Collections Page</h2>
 
-    </section><!-- end .user .view -->
-    <section class="login view">
-      <h2>Login and Logoff View Page</h2>
 
-    </section><!-- end .login .view -->
-    <section class="about view">
-      <h2>About View Page</h2>
+        <img alt="Planes Keeper Header Logo" name="Planes Keeper Logo" src="http://via.placeholder.com/200x300" />
+        <section class="homeView">
+            <form action="">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </section>
+        <nav class="menu">
+            <ul>
+                <li class="tab user-login" data-content="login">
+                    <a href="#">Login</a>
+                </li>
+                <li class="tab user-logoff" data-content="logoff">
+                    <a href="#">Logoff</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- <button class="hamburger">&#9776;</button> -->
+        <!-- <button class="cross">&#735;</button> -->
+    </header>
+    <main>
+        <section class="home view">
+            <h2>Home View Page</h2>
 
-    </section><!-- end .about .view -->
+        </section>
+        <!-- end .home .view -->
+        <section class="user view">
+            <h2>User View - Collections Page</h2>
 
-    <!-- <section class="single view"> -->
-      <!-- <h2>In case we need to view a page for a single card</h2> -->
-    <!-- </section>  --> <!-- end .single .view -->
-    <!-- <section class="deck view"> -->
-      <!-- <h2>Stretch Goal: Show User's Decks</h2> -->
-    <!-- </section> --> <!-- end .deck .view -->
+        </section>
+        <!-- end .user .view -->
+        <section class="login view">
+            <h2>Login and Logoff View Page</h2>
 
-  </main>
+        </section>
+        <!-- end .login .view -->
 
-  <footer>
-    <h3>Here is Our Footer</h3>
-  </footer>  
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="scripts/index.js"></script>
-  <script src="scripts/views/home-view.js"></script>
-  <script src="scripts/views/user-view.js"></script>
-  <script src="scripts/views/login-view.js"></script>
-  <!-- <script src="scripts/views/single-view.js"></script> -->
-  <!-- <script src="scripts/views/deck-view.js"></script> -->
-</body>  
+
+
+        <section class="about view">
+            <h1 id="aboutHeader">Meet the Planes Keeper Dev team</h1>
+
+            <div id="allCards">
+                <!-- kelly card -->
+                <div id="f1_container">
+                    <div id="f1_card" class="shadow">
+                        <div class="front face">
+
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+                            />
+                        </div>
+                        <div class="back face center">
+                            <img id="kelly" src="images/kelly.jpeg" />
+
+                            <p>
+                                <a href="https://github.com/cornerkick87">Github</a>
+                            </P>
+
+                            <p>
+                                <a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a>
+                            </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- tyler card-->
+                <div id="f1_container">
+                    <div id="f1_card" class="shadow">
+                        <div class="front face">
+
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+                            />
+                        </div>
+                        <div class="back face center">
+                            <img id="tyler" src="images/tyler.jpeg" />
+
+                            <p>
+                                <a href="https://github.com/cornerkick87">Github</a>
+                            </p>
+
+                            <p>
+                                <a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chris card -->
+                <div id="f1_container">
+                    <div id="f1_card" class="shadow">
+                        <div class="front face">
+
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+                            />
+                        </div>
+                        <div class="back face center">
+                            <img id="chris" src="images/chris.jpeg" />
+
+                            <p>
+                                <a href="https://github.com/cornerkick87">Github</a>
+                            </p>
+
+                            <p>
+                                <a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end .about .view -->
+
+        <!-- <section class="single view"> -->
+        <!-- <h2>In case we need to view a page for a single card</h2> -->
+        <!-- </section>  -->
+        <!-- end .single .view -->
+        <!-- <section class="deck view"> -->
+        <!-- <h2>Stretch Goal: Show User's Decks</h2> -->
+        <!-- </section> -->
+        <!-- end .deck .view -->
+
+    </main>
+
+    <footer>
+        <h3>Here is Our Footer</h3>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/views/home-view.js"></script>
+    <script src="scripts/views/user-view.js"></script>
+    <script src="scripts/views/login-view.js"></script>
+    <!-- <script src="scripts/views/single-view.js"></script> -->
+    <!-- <script src="scripts/views/deck-view.js"></script> -->
+</body>
+
 </html>
