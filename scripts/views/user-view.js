@@ -1,10 +1,10 @@
 'use strict';
 
-var app = app || {}
+var app = app || {};
 
-(function(module){
+(function(module){ // start IIFE 
 
-  module.cardView.initUserPage() {
+  module.cardView.initUserPage = () => {
     console.log('Show User Collection Page'); 
     app.showOnly('user'); 
   };
@@ -12,4 +12,4 @@ var app = app || {}
   // listners used only in user-view where they can search their collection
   
 
-})(app);
+})(app); // end IIFE

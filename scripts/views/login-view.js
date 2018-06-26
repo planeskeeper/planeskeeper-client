@@ -1,15 +1,15 @@
 'use strict';
 
-var app = app || {}
+var app = app || {};
 
 (function(module){ // start IIFE
 
-  module.cardView.initLoginPage(action) { 
+  module.cardView.initLoginPage = (action) => { 
     app.showOnly('login'); 
     if( action === 'login') {
       console.log('User Login'); 
       // authenticate the user
-    } else { // (action === 'logout')
+    } else { // (action === 'logoff')
       console.log('User Log-OFF'); 
     } // end if/else login/logout
     }; // end initLoginPage

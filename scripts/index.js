@@ -1,11 +1,11 @@
 'use strict';
-var app = app || {}
+var app = app || {};
 
 (function(module){ // Begin IIFE
 
   let productionApi = '';
   let devApi = 'http://localhost:3000';
-  module.isProduciton = /^(?!localhostr|127)/.test(windows.location.hostname);
+  module.isProduciton = /^(?!localhostr|127)/.test(window.location.hostname);
   module.ENVIROMENT = {
     apiURL: module.isProduciton ? productionApi : devApi
   };
@@ -19,23 +19,30 @@ var app = app || {}
     $(`.${selector}`).show();
   } // end .showOnly
   
-$(document).ready(function () {
+  
   // event listner & handler for navigation 
-  $('nav').on('click', '.tab', e => {
-    event.preventDefault();
+  $('nav').on('click', '.tab', function(e) {
+    e.preventDefault();
     let link = `${$(this).data('content')}`; 
     console.log(` You clicked ${link}`);
-    if (link === 'home') app.cardView.initIndexPage;
-    if (link === 'user') app.cardView.initUserPage; 
+    if (link === 'home') app.cardView.initIndexPage();
+    if (link === 'user') app.cardView.initUserPage(); 
     if (link === 'about') module.showOnly('about');
     if (link === 'login') app.cardView.initLoginPage('login'); 
-    if (link === 'logout') app.cardView.initLoginPage('logout'); 
+    if (link === 'logoff') app.cardView.initLoginPage('logoff'); 
   }); // end event listner for navigation 
-} // end on document load
-
+  
   // listner for main page search is in home-view.js, and so is the 
   // listner for actions on each card in search result
-
+  
+  $(document).ready(function () {
+    // module.showOnly('home'); 
+    if (app.cardView.user) {
+      $('.user-login').html(app.cardView.user);
+    } else { 
+      $('.user-logoff').hide(); 
+    }
+  }); // end on document load
 
   module.errorCallback = errorCallback; 
 })(app); // End IIFE

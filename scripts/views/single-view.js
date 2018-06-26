@@ -1,10 +1,10 @@
 'use strict';
 
-var app = app || {}
+var app = app || {};
 
 (function(module){ // start IIFE
 
-  module.cardView.initIndexPage() {
+  module.cardView.initIndexPage = () => {
     console.log('init Single Card Page'); 
     app.showOnly('single'); 
   };
