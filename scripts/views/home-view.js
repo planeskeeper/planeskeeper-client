@@ -2,18 +2,19 @@
 
 var app = app || {}
 
-(function(module){
-  let homeView = {}; 
-  homeView.initIndexPage() {
+(function(module){ // start IIFE
+  let cardView = {}; 
+  cardView.initIndexPage() {
+    console.log('init Index Page'); 
     app.showOnly('home'); 
   };
-
 
   // listner for main page search
    $('#search-all').on('click', searchAll);
 
    function searchAll(e) { // currently just stubbed out. 
-    //  e.preventDefault();
+     e.preventDefault();
+     console.log('You clicked on Search All');
     //  $.get();  
    } // end searchAll
  
@@ -25,6 +26,6 @@ var app = app || {}
     console.log(`Your action: ${action}`); 
   }); // end listner for each card in search result list
 
-  module.homeView = homeView; 
-  
-})(app);
+
+  module.cardView = cardView;
+})(app); // end IIFE

@@ -2,7 +2,11 @@
 
 var app = app || {}
 
-(function(module){
-  
+(function(module){ // start IIFE
 
-})(app);
+  module.cardView.initIndexPage() {
+    console.log('init Single Card Page'); 
+    app.showOnly('single'); 
+  };
+
+})(app); // end IIFE

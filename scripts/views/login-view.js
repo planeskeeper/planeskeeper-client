@@ -2,7 +2,16 @@
 
 var app = app || {}
 
-(function(module){
-  
+(function(module){ // start IIFE
 
-})(app);
+  module.cardView.initLoginPage(action) { 
+    app.showOnly('login'); 
+    if( action === 'login') {
+      console.log('User Login'); 
+      // authenticate the user
+    } else { // (action === 'logout')
+      console.log('User Log-OFF'); 
+    } // end if/else login/logout
+    }; // end initLoginPage
+  
+})(app); // end IIFE

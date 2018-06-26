@@ -1,8 +1,14 @@
 'use strict';
 
-var app = app || {}
+// This will be used in our stretch goals of showing the user's prepared decks
 
-(function(module){
+// var app = app || {}
 
+// (function(module){
 
-})(app);
+//   module.cardView.initDeckPage() {
+//     console.log('init Deck Page'); 
+//     app.showOnly('deck'); 
+//   };
+
+// })(app);
