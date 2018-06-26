@@ -8,6 +8,14 @@
   <link rel="stylesheet" type="text/css" href="styles/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 
+  <script id="card-list-template" type="text/x-handlebars-template">
+    
+        <div>
+              <img src="{{imageUrl}}" />
+        </div>
+
+</script>
+
 </head>
 <body>
   <header>
@@ -48,6 +56,20 @@
 
     </section><!-- end .about .view -->
 
+    <form id="card-search">
+
+      <label>Search by name:
+      <input id="card-name-search" type="text"/>
+    </label>
+      <button id="search-button">Search</button>
+    </form>
+
+    <section class="container">
+    </section>
+
+    <section class="card-view" id="book-list">
+    </section>
+
     <!-- <section class="single view"> -->
       <!-- <h2>In case we need to view a page for a single card</h2> -->
     <!-- </section>  --> <!-- end .single .view -->
@@ -67,6 +89,8 @@
   <script src="scripts/views/home-view.js"></script>
   <script src="scripts/views/user-view.js"></script>
   <script src="scripts/views/login-view.js"></script>
+  <script src="scripts/models/cards.js"></script>
+
   <!-- <script src="scripts/views/single-view.js"></script> -->
   <!-- <script src="scripts/views/deck-view.js"></script> -->
 </body>  
