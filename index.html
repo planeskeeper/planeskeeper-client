@@ -8,6 +8,14 @@
   <link rel="stylesheet" type="text/css" href="styles/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 
+  <script id="card-list-template" type="text/x-handlebars-template">
+    
+        <div>
+              <img src="{{imageUrl}}" />
+        </div>
+
+</script>
+
 </head>
 <body>
   <header>
@@ -33,7 +41,14 @@
   <main>
     <section class="home view">
       <h2>Home View Page</h2>
-
+      <form id="card-search">
+        <label>Search by name:
+          <input id="card-name-search" type="text"/>
+        </label>
+        <button id="search-button">Search</button>
+      </form>
+      <section id="main-search"> <!-- search results go here --></section>
+  
     </section><!-- end .home .view -->
     <section class="user view">
       <h2>User View - Collections Page</h2>
@@ -47,6 +62,8 @@
       <h2>About View Page</h2>
 
     </section><!-- end .about .view -->
+
+
 
     <!-- <section class="single view"> -->
       <!-- <h2>In case we need to view a page for a single card</h2> -->
@@ -64,9 +81,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="scripts/index.js"></script>
+  <script src="scripts/models/cards.js"></script>
   <script src="scripts/views/home-view.js"></script>
   <script src="scripts/views/user-view.js"></script>
   <script src="scripts/views/login-view.js"></script>
+  <script src="scripts/models/cards.js"></script>
+
   <!-- <script src="scripts/views/single-view.js"></script> -->
   <!-- <script src="scripts/views/deck-view.js"></script> -->
 </body>  

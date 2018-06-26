@@ -1,16 +1,16 @@
 'use strict';
 var app = app || {};
 
-(function(module){ // Begin IIFE
+(function(module){ // begin IIFE
 
   function Card(cardObj) { // Card object constructor
     this.card_id = cardObj.id, 
     this.name = cardObj.name, 
-    this.image_url = cardObj.imageUrl, 
+    this.image_url = cardObj.imageUrl || 'http://via.placeholder.com/223x310', 
     this.rarity = cardObj.rarity,
     this.set = cardObj.setName, 
     this.body = cardObj.originalText, 
-    this.color = cardObj.colors
+    this.color = cardObj.colors || 'none';
     // Object.keys(cardObj).forEach(key => this[key] = cardObj[key]);
   } // end Card constructor 
   
@@ -19,6 +19,7 @@ var app = app || {};
   // Card.all = []; // temporary place holder.  
 
   Card.prototype.toHtml = function (output) {
+    console.log('We are in .toHtml');
     if (output !== 'user' || 'search') {
       app.errorCallback('Card.toHtml called with paramater not equal to "user" or "search" ');
     } else {
@@ -34,10 +35,11 @@ var app = app || {};
   } // end prototype.toHtml
 
   Card.loadAll = (source, rows) => {
-    if (source !== 'user' || 'search') {
+    console.log(`loadAll was called for ${source}`); 
+    if (source == 'search') console.log(`with these inputs ${rows}`);
+    if (source !== 'user' && source !== 'search') {
       app.errorCallback('Card.loadAll called with first paramater not equal to "user" or "search" ');
-    } else {
-
+    } else { // sort, instantiate, put in appropriate list
       rows.sort((a,b) => {
         if (a.name.toUpperCase() < b.name.toUpperCase()) { return -1 }
         if (a.name.toUpperCase() > b.name.toUpperCase()) { return 1 }
@@ -51,5 +53,4 @@ var app = app || {};
   } // end of Card.loadAll
 
   module.Card = Card; 
-
 })(app); // end IIFE
