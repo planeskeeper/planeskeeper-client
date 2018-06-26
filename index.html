@@ -40,14 +40,7 @@
 
 
         <img alt="Planes Keeper Header Logo" name="Planes Keeper Logo" src="http://via.placeholder.com/200x300" />
-        <section class="homeView">
-            <form action="">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-            </form>
-        </section>
+
         <nav class="menu">
             <ul>
                 <li class="tab user-login" data-content="login">
@@ -64,7 +57,15 @@
     <main>
         <section class="home view">
             <h2>Home View Page</h2>
-
+            <form id="card-search">
+                <label>Search by name:
+                    <input id="card-name-search" type="text" />
+                </label>
+                <button id="search-button">Search</button>
+            </form>
+            <section id="main-search">
+                <!-- search results go here -->
+            </section>
         </section>
         <!-- end .home .view -->
         <section class="user view">
