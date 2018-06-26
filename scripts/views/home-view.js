@@ -12,7 +12,6 @@ var app = app || {};
   
   cardView.searchTemplate = cardObj => {
     let template = Handlebars.compile($('#card-template').text());
-    console.log(template);
     return template(cardObj);
   }; // end cardView.searchTemplate 
 
@@ -20,7 +19,6 @@ var app = app || {};
     event.preventDefault();
     var cardName = $('#card-name-search').val();
     $.getJSON(`https://api.magicthegathering.io/v1/cards?name=${cardName}`, function (json) {
-      console.log(json.cards); 
       app.Card.loadAll('search', json.cards); 
       $('#main-search').html(''); 
       app.Card.search.map(a => a.toHtml('search')); 
