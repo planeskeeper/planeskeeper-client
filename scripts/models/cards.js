@@ -19,8 +19,7 @@ var app = app || {};
   // Card.all = []; // temporary place holder.  
 
   Card.prototype.toHtml = function (output) {
-    console.log('We are in .toHtml');
-    if (output !== 'user' || 'search') {
+    if (output !== 'user' && output !== 'search') {
       app.errorCallback('Card.toHtml called with paramater not equal to "user" or "search" ');
     } else {
       if (output = 'search') {

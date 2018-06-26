@@ -4,10 +4,17 @@ var app = app || {};
 
 (function(module){ // start IIFE
   let cardView = {}; 
+
   cardView.initIndexPage = () => {
     console.log('init Index Page'); 
     app.showOnly('home'); 
-  };
+  }; // end cardView.initIndexPage 
+  
+  cardView.searchTemplate = cardObj => {
+    let template = Handlebars.compile($('#card-template').text());
+    console.log(template);
+    return template(cardObj);
+  }; // end cardView.searchTemplate 
 
   let getCardsApi = function (event) {
     event.preventDefault();
@@ -15,20 +22,16 @@ var app = app || {};
     $.getJSON(`https://api.magicthegathering.io/v1/cards?name=${cardName}`, function (json) {
       console.log(json.cards); 
       app.Card.loadAll('search', json.cards); 
+      $('#main-search').html(''); 
+      app.Card.search.map(a => a.toHtml('search')); 
     });
-  };
+  }; // end getCArdsApi, which is our search-button handler
+  
 
   // listner for main page search
   $('#search-button').click(getCardsApi);
   //  $('#search-all').on('click', searchAll);
 
-
-  //  function searchAll(e) { // currently just stubbed out. 
-  //    e.preventDefault();
-  //    console.log('You clicked on Search All');
-  //   //  $.get();  
-  //  } // end searchAll
- 
   // listner for action on each card in search result list  
   // $('article').on('click', '.card-in-list', e => {
   //   let idChoice = `${$(this).attr('id')}`; 
@@ -36,7 +39,6 @@ var app = app || {};
   //   console.log(`On Card id: ${idChoice}`);
   //   console.log(`Your action: ${action}`); 
   // }); // end listner for each card in search result list
-
 
   module.cardView = cardView;
 })(app); // end IIFE
