@@ -6,7 +6,7 @@ var app = app || {};
   function Card(cardObj) { // Card object constructor
     this.card_id = cardObj.id, 
     this.name = cardObj.name, 
-    this.image_url = cardObj.imageUrl || 'http://via.placeholder.com/223x310', 
+    this.image_url = cardObj.imageUrl || 'https://image.ibb.co/imTHKo/magic_card_back_no_preview.png', 
     this.rarity = cardObj.rarity,
     this.set = cardObj.setName, 
     this.body = cardObj.originalText, 

@@ -40,7 +40,6 @@
         </li>
       </ul>
     </nav>
-    <img alt="Planes Keeper Header Logo" name="Planes Keeper Logo" src="http://via.placeholder.com/60x60" />
     <nav class="menu">
       <ul>
         <li class="tab user-login" data-content="login">
@@ -60,27 +59,28 @@
       <h2>Home View Page</h2>
 
       <form id="card-search">
-        <label>Search by name:
-          <input id="card-name-search" type="text" />
-        </label>
+
+        <label>Search by name: <input id="card-name-search" type="text" /></label>
+
         <button id="search-button">Search</button>
       </form>
       <section id="main-search">
         <!-- search results go here -->
       </section>
-
-    </section>
-    <!-- end .home .view -->
+    </section><!-- end .home .view -->
     <section class="user view">
       <h2>User View - Collections Page</h2>
 
-    </section>
-    <!-- end .user .view -->
+    </section><!-- end .user .view -->
     <section class="login view">
       <h2>Login and Logoff View Page</h2>
-
+      <form>
+        <label>Username:</label>
+        <input id="username" type="text" name="username" required/>
+        <button id="login">Log-in</button>
+      </form>
     </section>
-    <!-- end .login .view -->
+
     <section class="about view">
       <h2>About View Page</h2>
       <h1 id="aboutHeader">Meet the Planes Keeper Dev team</h1>
@@ -89,7 +89,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+              <img src="images/magic.png"
               />
             </div>
             <div class="back face center">
@@ -107,7 +107,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+              <img src="images/magic.png"
               />
             </div>
             <div class="back face center">
@@ -125,7 +125,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/200px-Magic_the_gathering-card_back.jpg"
+              <img src="images/magic.png"
               />
             </div>
             <div class="back face center">
@@ -140,8 +140,7 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- end .about .view -->
+    </section><!-- end .about .view -->
 
     <!-- <section class="single view"> -->
     <!-- <h2>In case we need to view a page for a single card</h2> -->
