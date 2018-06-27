@@ -6,10 +6,10 @@ var app = app || {};
   function Card(cardObj) { // Card object constructor
     this.card_id = cardObj.id, 
     this.name = cardObj.name, 
-    this.image_url = cardObj.imageUrl || 'https://image.ibb.co/imTHKo/magic_card_back_no_preview.png', 
+    this.image_url = cardObj.imageUrl || cardObj.image_url || 'https://image.ibb.co/imTHKo/magic_card_back_no_preview.png', 
     this.rarity = cardObj.rarity,
-    this.set = cardObj.setName, 
-    this.body = cardObj.originalText, 
+    this.set = cardObj.set, 
+    this.body = cardObj.originalText || cardObj.body, 
     this.color = cardObj.colors || 'none';
     // Object.keys(cardObj).forEach(key => this[key] = cardObj[key]);
   } // end Card constructor 
@@ -34,6 +34,7 @@ var app = app || {};
   } // end prototype.toHtml
 
   Card.loadAll = (source, rows) => {
+    console.log(`we are in loadAll for ${source} `);
     if (source !== 'user' && source !== 'search') {
       app.errorCallback('Card.loadAll called with first paramater not equal to "user" or "search" ');
     } else { // sort, instantiate, put in appropriate list
@@ -52,7 +53,7 @@ var app = app || {};
   Card.fetchAll = (user) => {
     console.log(`We are in Card.fetchAll for user: ${user}`);
     console.log(`Env apiUrl: ${app.ENVIROMENT.apiURL}`); 
-    $.get(`${app.ENVIROMENT.apiURL}/collect/users/${user}`).then(results => {
+    $.get(`${app.ENVIROMENT.apiURL}/collection/${user}`).then(results => {
       console.log(`Card.fetch put results in app.Card.user`);
       Card.loadAll('user', results); 
     }).catch(console.error); 
