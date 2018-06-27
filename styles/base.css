@@ -1,13 +1,24 @@
 *
+/* nav ul {    */
+      /* grid-auto-columns: ; */
+        /* text-align: center; */
+        /* padding: 0;
+        margin: 0;
+      }
 h1 {
     text-align: center;
     color: aliceblue;
+
 }
 .card-template {
-    position:absolute;
-    left:50%; 
-    top:50%;
+    align-content:auto;
+    /* left:50%; 
+    top:50%; */
+#main-search {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+
 }
-p{
+body {
     color: aliceblue;
 }
