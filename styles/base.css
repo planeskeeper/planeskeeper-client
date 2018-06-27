@@ -1,4 +1,5 @@
 *
+
 h1 {
     text-align: center;
     color: aliceblue;
@@ -11,3 +12,9 @@ h1 {
 body {
     color: aliceblue;
 }
+
+@font-face {
+    font-family: MagicTheGathering;
+    src: url(/assets/fonts/MAGIC.TTF);
+    }
+    
