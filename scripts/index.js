@@ -4,7 +4,7 @@ var app = app || {};
 (function(module){ // Begin IIFE
 
   let productionApi = 'https://planeskeeper.herokuapp.com/';
-  let devApi = 'http://localhost:3000';
+  let devApi = 'http://localhost:3000/api/v1';
   module.isProduciton = /^(?!localhostr|127)/.test(window.location.hostname);
   module.ENVIROMENT = {
     apiURL: module.isProduciton ? productionApi : devApi

@@ -49,5 +49,14 @@ var app = app || {};
     } // end if (paramater input error) - else instantiate and put in assigned list
   } // end of Card.loadAll
 
+  Card.fetchAll = (user) => {
+    console.log(`We are in Card.fetchAll for user: ${user}`);
+    console.log(`Env apiUrl: ${app.ENVIROMENT.apiURL}`); 
+    $.get(`${app.ENVIROMENT.apiURL}/collect/users/${user}`).then(results => {
+      console.log(`Card.fetch put results in app.Card.user`);
+      Card.loadAll('user', results); 
+    }).catch(console.error); 
+  }; // end Card.fetchAll 
+
   module.Card = Card; 
 })(app); // end IIFE
