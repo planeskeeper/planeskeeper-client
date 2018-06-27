@@ -3,8 +3,8 @@ var app = app || {};
 
 (function(module){ // Begin IIFE
 
-  let productionApi = '';
-  let devApi = 'http://localhost:3000';
+  let productionApi = 'temp production Api';
+  let devApi = 'http://localhost:3000/api/v1';
   module.isProduciton = /^(?!localhostr|127)/.test(window.location.hostname);
   module.ENVIROMENT = {
     apiURL: module.isProduciton ? productionApi : devApi
