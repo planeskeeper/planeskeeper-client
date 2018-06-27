@@ -3,7 +3,7 @@ var app = app || {};
 
 (function(module){ // Begin IIFE
 
-  let productionApi = '';
+  let productionApi = 'https://planeskeeper.herokuapp.com/';
   let devApi = 'http://localhost:3000';
   module.isProduciton = /^(?!localhostr|127)/.test(window.location.hostname);
   module.ENVIROMENT = {
