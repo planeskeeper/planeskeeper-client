@@ -12,9 +12,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="styles/module.css" />
   <link rel="stylesheet" href="text/css" media="screen" href="">
   <script src="scripts/index.js"></script>
+  
   <script id="card-template" type="text/x-handlebars-template">
     <div id="{{{card_id}}}">
-        <img src="{{{image_url}}}"/>
+        <img id="mtgCard" src="{{{image_url}}}"/>
         <!-- TODO: {{{count}}}  -->
         <body>You have: count</body>
         <button class="add-card" id="{{{card_id}}}">Add card</button>
@@ -75,8 +76,13 @@
     <section class="login view">
       <h2>Login and Logoff View Page</h2>
       <form>
-        <label>Username:</label>
-        <input id="username" type="text" name="username" required/>
+        <label>New Username:</label>
+        <input class="login-forms" id="new-username" type="text" name="username" required/>
+        <button id="new-login">Log-in</button>
+      </form>
+      <form>
+        <label>Log-in</label>
+        <input class="login-forms" id="username" type="text" name="username" required/>
         <button id="login">Log-in</button>
       </form>
     </section>
@@ -93,7 +99,7 @@
               />
             </div>
             <div class="back face center">
-              <img id="kelly" src="images/kelly.jpeg" />
+              <img id="kelly" src="images/kelly.png" />
               <p>
                 <a href="https://github.com/cornerkick87">Github</a>
               </p>
@@ -111,7 +117,7 @@
               />
             </div>
             <div class="back face center">
-              <img id="tyler" src="images/tyler.jpeg" />
+              <img id="tyler" src="images/tyler.png" />
               <p>
                 <a href="https://github.com/cornerkick87">Github</a>
               </p>

@@ -9,11 +9,11 @@ var app = app || {};
     Object.keys(usersObj).forEach(key => this[key] = usersObj[key]);
 };
 
-$('#login').on('click', handlForm);
+$('#new-login').on('click', handlForm);
     function handlForm(event) {
         event.preventDefault();
         let formData = {};
-        formData.username = $('#username').val()
+        formData.username = $('#new-username').val()
         let user = new Users(formData);
         console.log(user);
         user.postUser();
@@ -30,6 +30,8 @@ $('#login').on('click', handlForm);
               callback();
           })
   };
+
+  
 
   module.cardView.initLoginPage = (action) => { 
     app.showOnly('login'); 

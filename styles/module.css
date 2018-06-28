@@ -1,7 +1,8 @@
 body {
   
-  background-image: url("https://az616578.vo.msecnd.net/files/2016/06/25/636024823157923300797171718_39307_magic_the_gathering.jpg");
-
+  background: url("https://fc00.deviantart.net/fs70/i/2012/309/f/9/tavern_bg_by_mrainbowwj-d5k1ezg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 #aboutHeader {
   text-align: center;
@@ -139,6 +140,16 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   ;
+}
+
+#mtgCard{
+  max-width: 223px;
+  /* outline: black solid 3px; */
+  border-radius: 15px;
+}
+
+.login-forms{
+  color: black;
 }
 
 
