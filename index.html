@@ -14,11 +14,11 @@
   <script src="scripts/index.js"></script>
   
   <script id="card-template" type="text/x-handlebars-template">
-    <div id="{{{card_id}}}">
-        <img id="mtgCard" src="{{{image_url}}}"/>
+    <div id="{{card_id}}">
+        <img id="mtgCard" src="{{image_url}}"/>
         <!-- TODO: {{{count}}}  -->
         <body>You have: count</body>
-        <button class="add-card" id="{{{card_id}}}">Add card</button>
+        <button class="add-card" id="{{card_id}}">Add card</button>
     </div>
   </script>
 
