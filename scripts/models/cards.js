@@ -4,7 +4,7 @@ var app = app || {};
 (function(module){ // begin IIFE
 
   function Card(cardObj) { // Card object constructor
-    this.card_id = cardObj.id, 
+    this.api_card_id = cardObj.id, 
     this.name = cardObj.name, 
     this.image_url = cardObj.imageUrl || cardObj.image_url || 'https://image.ibb.co/imTHKo/magic_card_back_no_preview.png', 
     this.rarity = cardObj.rarity,
@@ -25,13 +25,44 @@ var app = app || {};
       if (output = 'search') {
         $('#main-search').append(app.cardView.searchTemplate(this)); 
       }
-      // if (output = 'user') { 
-      //   app.CardView.userTemplate(this); 
-      //   // print it to the appropriate location
-      // } 
+      if (output = 'user') { 
+        // $('#collect-list').append(app.CardView.userTemplate(this)); 
+        $('#collect-list').append(app.cardView.searchTemplate(this)); 
+        // print it to the appropriate location
+      } 
     } // if we had any more .toHtml conditions, they would go here. 
     
   } // end prototype.toHtml
+
+  Card.edit = function (idChoice, user_id, action) {
+    if (action = 'add') { // after a search, user decided to add this card
+      console.log(`We are in Card.edit with ${idChoice}, ${user_id}, ${action}`); 
+      // does our DB cards table already have this card? If not, add it. 
+      $.get(`${app.ENVIROMENT.apiURL}/cards/search/${idChoice}`)
+        .then(results => {
+          console.log(results);
+      }); // end $.get 
+      
+      // get the cards table id for this selected card. 
+      let card_id = 0; // make card_id = actual DB cards.id 
+      // upsert into users_cards for this user_id and card_id
+    } else if (action = 'plus') { // from collections page, user says they got another copy of this card
+      let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
+      // upsert into users_cards for this user_id and card_id
+    } else if (action = 'minus') { // from collections page, user says they have 1 less of this card
+      let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
+      // if the amount in users_cards is only 1, send an error that they need to click delete
+      // else update user_cards with 1 minus on amount value in the users_cards table 
+    } else if (action = 'delete') { // remove this card from the user's collection
+    let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
+    // delete from users_cards table regardless of number of cards the user has
+    // ?? do we want to see if we should remove it from the cards table (because no one has this card now)?
+  } else { // we want to edit that is not an add, plus, minus, or delete
+    // what else do we edit? 
+    // return an error code since we've captured all condidtions?
+  }
+  
+}; // end Card.add funciton. 
 
   Card.loadAll = (source, rows) => {
     console.log(`we are in loadAll for ${source} `);

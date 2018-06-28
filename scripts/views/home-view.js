@@ -28,9 +28,12 @@ var app = app || {};
         // note - e.target.id is the same as $(this).attr('id')
         // but only if we are inside function(e) and not arrow func
         let idChoice = e.target.id; 
+        let user = 1; 
         let action = 'add-card'; 
         console.log(`On Card id: ${idChoice}`);
+        console.log(`For user: ${user}`); 
         console.log(`Your action: ${action}`); 
+        app.Card.edit(idChoice, user, action); 
       }); // end listner for each card in search result list
     });
   }; // end getCArdsApi, which is our search-button handler
