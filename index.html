@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/module.css" />
+
   
   <script id="card-template" type="text/x-handlebars-template">
     <div>
@@ -19,6 +20,7 @@
         <button class="add-card" id="{{api_card_id}}">Add card</button>
     </div>
   </script>
+  
   <script id="collection-template" type="text/x-handlebars-template">
     <div>
         <img id="mtgCard" src="{{image_url}}"/>
@@ -33,30 +35,40 @@
 </head>
 <body>
   <header>
-    <h1>Planes Keeper</h1>
+
+    <span class="fire">Planes Keeper</span>
     <nav class="menu">
       <ul>
+
         <li class="tab" data-content="home"><a href="#"><img class="nav-img" id="nav-home" src="images/home-normal.png"/></a></li>
         <li class="tab" data-content="user"><a href="#"><img class="nav-img" id="nav-user" src="images/normal-cards.png"/></a></li>
         <li class="tab" data-content="about"><a href="#"><img class="nav-img" id="nav-about" src="images/normal-about.png"/></a></li>
         <li class="tab user-login" data-content="login"><a href="#"><img class="nav-img" id="nav-login" src="images/normal-login.png"/></a></li>
         <li class="tab user-logoff" data-content="logoff"><a href="#">Logoff</a></li>
       </ul>
+
   </header>
   <main>
     <section class="home view">
       <h2>Home View Page</h2>
       <form id="card-search">
+
         <label>Search by name: <input id="card-name-search" type="text" /></label>
         <a id="search-button"><img class="nav-img" id="search-img"src="images/normal-search.png"/></a>
       </form>
-      <section id="main-search"><!-- search results go here --></section>
-    </section><!-- end .home .view -->
+      
+      <section id="main-search">
+        <!-- search results go here -->
+      </section>
+    </section>
+    <!-- end .home .view -->
     <section class="user view">
       <h2>User View - Collections Page</h2>
       <!-- If we add search on user collection, put form here. -->
+
       <section id="collect-list"><!-- User Collection goes here --></section>
     </section><!-- end .user .view -->
+
     <section class="login view">
       <h2>Login and Logoff View Page</h2>
       <form>
@@ -79,8 +91,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
               <img id="kelly" src="images/kelly.png" />
@@ -97,16 +108,15 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
               <img id="tyler" src="images/tyler.png" />
               <p>
-                <a href="https://github.com/cornerkick87">Github</a>
+                <a href="https://github.com/louiethe17th">Github</a>
               </p>
               <p>
-                <a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a>
+                <a href="https://www.linkedin.com/in/marktylerpearson/">linkedin</a>
               </p>
             </div>
           </div>
@@ -115,13 +125,12 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
-              <img id="chris" src="images/chris.jpeg" />
+              <img id="chris" src="images/chris.png" />
               <p>
-                <a href="https://github.com/cornerkick87">Github</a>
+                <a href="https://github.com/ChrisSeattle">Github</a>
               </p>
               <p>
                 <a href="https://www.linkedin.com/in/kelly-bennett-413414159/">linkedin</a>
@@ -130,7 +139,8 @@
           </div>
         </div>
       </div>
-    </section><!-- end .about .view -->
+    </section>
+    <!-- end .about .view -->
 
     <!-- <section class="single view"> -->
     <!-- <h2>In case we need to view a page for a single card</h2> -->
@@ -144,7 +154,7 @@
   </main>
 
   <footer>
-    <h3>Here is Our Footer</h3>
+    <p>&copy; 2018 PlanesKeeper</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
