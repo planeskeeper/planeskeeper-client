@@ -8,12 +8,7 @@ var app = app || {};
     console.log('Show User Collection Page'); 
     app.showOnly('user'); 
     $('#collect-list').html(''); // removes all cards displayed user cards. 
-    let user = 1; 
-    app.user = user; 
-    app.Card.fetchAll(app.user); // Card.user is an array of all this user's collection
-    console.log('so put it on the page!'); 
-    
-    app.Card.user.map(a => a.toHtml('user'));
+    app.Card.user.map(a => a.toHtml('user')); // put their collection on the page!
 
   }; // end cardView.initUserPage
 
