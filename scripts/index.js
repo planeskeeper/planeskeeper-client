@@ -70,7 +70,7 @@ var app = app || {};
 $(function(){
   $("#nav-home").on({
    mouseenter: function(){
-    $(this).attr('src','/images/hover-home.png');
+    $(this).attr('src','images/hover-home.png');
   },
   mouseleave: function(){
     $(this).attr('src','images/home-normal.png');
@@ -86,7 +86,7 @@ $(function(){
 $(function(){
   $("#nav-user").on({
    mouseenter: function(){
-    $(this).attr('src','/images/hover-cards.png');
+    $(this).attr('src','images/hover-cards.png');
   },
   mouseleave: function(){
     $(this).attr('src','images/normal-cards.png');
@@ -102,7 +102,7 @@ $(function(){
 $(function(){
   $("#nav-about").on({
    mouseenter: function(){
-    $(this).attr('src','/images/hover-about.png');
+    $(this).attr('src','images/hover-about.png');
   },
   mouseleave: function(){
     $(this).attr('src','images/normal-about.png');
@@ -118,7 +118,7 @@ $(function(){
 $(function(){
   $("#nav-login").on({
    mouseenter: function(){
-    $(this).attr('src','/images/hover-login.png');
+    $(this).attr('src','images/hover-login.png');
   },
   mouseleave: function(){
     $(this).attr('src','images/normal-login.png');
@@ -134,7 +134,7 @@ $(function(){
 $(function(){
   $("#search-img").on({
    mouseenter: function(){
-    $(this).attr('src','/images/hover-search.png');
+    $(this).attr('src','images/hover-search.png');
   },
   mouseleave: function(){
     $(this).attr('src','images/normal-search.png');
