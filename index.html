@@ -7,21 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PlanesKeeper</title>
   <link rel="stylesheet" type="text/css" href="styles/reset.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/module.css" />
-  <link rel="stylesheet" href="text/css" media="screen" href="">
-  <script src="scripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/base.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/layout.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/module.css" />
+
   <script id="card-template" type="text/x-handlebars-template">
-    <div id="{{{card_id}}}">
-        <img src="{{{image_url}}}"/>
-        <!-- TODO: {{{count}}}  -->
-        <body>You have: count</body>
-        <button class="add-card" id="{{{card_id}}}">Add card</button>
+    <div  id="{{card_id}}">
+        <img src="{{image_url}}"/>
+      <div>this is your count</div>
+        <button class="add-card" data-id="{{card_id}}">Add card</button>
+        <button class="delete-card" data-id="{{card_id}}">delete card</button>
     </div>
   </script>
-
-
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -60,18 +58,26 @@
 
       <form id="card-search">
 
-        <label>Search by name: <input id="card-name-search" type="text" /></label>
+        <label>Search by name:
+          <input id="card-name-search" type="text" />
+        </label>
 
         <button id="search-button">Search</button>
       </form>
-      <section id="main-search"><!-- search results go here --></section>
-    </section><!-- end .home .view -->
+      <section id="main-search">
+        <!-- search results go here -->
+      </section>
+    </section>
+    <!-- end .home .view -->
     <section class="user view">
       <h2>User View - Collections Page</h2>
       <!-- If we add search on user collection, put form here. -->
-      <section id="collect-list"><!-- User Collection goes here --></section>
+      <section id="collect-list">
+        <!-- User Collection goes here -->
+      </section>
 
-    </section><!-- end .user .view -->
+    </section>
+    <!-- end .user .view -->
     <section class="login view">
       <h2>Login and Logoff View Page</h2>
       <form>
@@ -89,8 +95,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
               <img id="kelly" src="images/kelly.jpeg" />
@@ -107,8 +112,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
               <img id="tyler" src="images/tyler.jpeg" />
@@ -125,8 +129,7 @@
         <div id="f1_container">
           <div id="f1_card" class="shadow">
             <div class="front face">
-              <img src="images/magic.png"
-              />
+              <img src="images/magic.png" />
             </div>
             <div class="back face center">
               <img id="chris" src="images/chris.jpeg" />
@@ -140,7 +143,8 @@
           </div>
         </div>
       </div>
-    </section><!-- end .about .view -->
+    </section>
+    <!-- end .about .view -->
 
     <!-- <section class="single view"> -->
     <!-- <h2>In case we need to view a page for a single card</h2> -->
@@ -157,14 +161,13 @@
     <h3>Here is Our Footer</h3>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="scripts/index.js"></script>
-  <script src="scripts/models/cards.js"></script>
-  <script src="scripts/views/home-view.js"></script>
-  <script src="scripts/views/user-view.js"></script>
-  <script src="scripts/views/login-view.js"></script>
+  <script src="/scripts/index.js"></script>
+  <script src="/scripts/models/cards.js"></script>
+  <script src="/scripts/views/home-view.js"></script>
+  <script src="/scripts/views/user-view.js"></script>
+  <script src="/scripts/views/login-view.js"></script>
 
   <!-- <script src="scripts/views/single-view.js"></script> -->
   <!-- <script src="scripts/views/deck-view.js"></script> -->
