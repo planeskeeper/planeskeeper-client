@@ -23,3 +23,5 @@ user_id VARCHAR(255),
 card_id VARCHAR(255),
 ammount VARCHAR(255)
 );
+
+#CREDITS
