@@ -17,8 +17,8 @@
     <div id="{{card_id}}">
         <img id="mtgCard" src="{{image_url}}"/>
         <!-- TODO: {{{count}}}  -->
-        <body>You have: count</body>
         <button class="add-card" id="{{card_id}}">Add card</button>
+        <body>You have: count</body>
     </div>
   </script>
 
@@ -31,26 +31,22 @@
     <nav class="menu">
       <ul>
         <li class="tab" data-content="home">
-          <a href="#">Home</a>
+          <a href="#"><img class="nav-img" id="nav-home" src="images/home-normal.png"/></a>
         </li>
         <li class="tab" data-content="user">
-          <a href="#">User</a>
+          <a href="#"><img class="nav-img" id="nav-user" src="images/normal-cards.png"/></a>
         </li>
         <li class="tab" data-content="about">
-          <a href="#">About</a>
+          <a href="#"><img class="nav-img" id="nav-about" src="images/normal-about.png"/></a>
         </li>
-      </ul>
-    </nav>
-    <nav class="menu">
-      <ul>
         <li class="tab user-login" data-content="login">
-          <a href="#">Login</a>
+          <a href="#"><img class="nav-img" id="nav-login" src="images/normal-login.png"/></a>
         </li>
         <li class="tab user-logoff" data-content="logoff">
           <a href="#">Logoff</a>
         </li>
       </ul>
-    </nav>
+
 
     <!-- <button class="hamburger">&#9776;</button> -->
     <!-- <button class="cross">&#735;</button> -->
@@ -63,7 +59,8 @@
 
         <label>Search by name: <input id="card-name-search" type="text" /></label>
 
-        <button id="search-button">Search</button>
+
+        <a id="search-button"><img class="nav-img" id="search-img"src="images/normal-search.png"/></a>
       </form>
       <section id="main-search"><!-- search results go here --></section>
     </section><!-- end .home .view -->

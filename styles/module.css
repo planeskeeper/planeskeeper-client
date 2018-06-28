@@ -1,7 +1,7 @@
 body {
   
-  background: url("https://fc00.deviantart.net/fs70/i/2012/309/f/9/tavern_bg_by_mrainbowwj-d5k1ezg.jpg");
-  background-repeat: no-repeat;
+  background: url("https://pre00.deviantart.net/f93a/th/pre/i/2012/207/c/f/stone_wall_texture_by_zagreb_dubrava-d58pwxm.png");
+
   background-size: 100%;
 }
 #aboutHeader {
@@ -127,7 +127,8 @@ body {
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
-  width: 100%;
+  width: 223px;
+
   
 }
 
@@ -152,6 +153,15 @@ body {
   color: black;
 }
 
+.nav-img{
+  width: 150px;
+}
+
+button{
+
+  border: none;
+  padding: 0;
+}
 
 
 

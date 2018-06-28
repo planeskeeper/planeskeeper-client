@@ -38,7 +38,7 @@ var app = app || {};
     if (action = 'add') { // after a search, user decided to add this card
       console.log(`We are in Card.edit with ${idChoice}, ${user_id}, ${action}`); 
       // does our DB cards table already have this card? If not, add it. 
-      $.get(`${app.ENVIROMENT.apiURL}/cards/search/${idChoice}`)
+      $.get(`${app.ENVIROMENT.apiURL}/cards/${idChoice}`)
         .then(results => {
           console.log(results);
       }); // end $.get 
