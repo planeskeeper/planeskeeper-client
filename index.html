@@ -11,55 +11,43 @@
   <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/module.css" />
   
-  
-  
   <script id="card-template" type="text/x-handlebars-template">
-    <div id="{{card_id}}">
+    <div>
         <img id="mtgCard" src="{{image_url}}"/>
         <!-- TODO: {{{count}}}  -->
-        <button class="add-card" id="{{card_id}}">Add card</button>
-        <body>You have: count</body>
+        <p>You have: count</p>
+        <button class="add-card" id="{{api_card_id}}">Add card</button>
     </div>
   </script>
-
-
+  <script id="collection-template" type="text/x-handlebars-template">
+    <div>
+        <img id="mtgCard" src="{{image_url}}"/>
+        <!-- TODO: {{{count}}}  -->
+        <p>You have: count</p>
+        <button class="plus-card" data-id="{{api_card_id}}">Plus card</button>
+        <button class="minus-card" data-id="{{api_card_id}}">Minus card</button>
+        <button class="delete-card" data-id="{{api_card_id}}">Delete card</button>
+    </div>
+  </script>
+    
 </head>
-
 <body>
   <header>
     <h1>Planes Keeper</h1>
     <nav class="menu">
       <ul>
-        <li class="tab" data-content="home">
-          <a href="#"><img class="nav-img" id="nav-home" src="images/home-normal.png"/></a>
-        </li>
-        <li class="tab" data-content="user">
-          <a href="#"><img class="nav-img" id="nav-user" src="images/normal-cards.png"/></a>
-        </li>
-        <li class="tab" data-content="about">
-          <a href="#"><img class="nav-img" id="nav-about" src="images/normal-about.png"/></a>
-        </li>
-        <li class="tab user-login" data-content="login">
-          <a href="#"><img class="nav-img" id="nav-login" src="images/normal-login.png"/></a>
-        </li>
-        <li class="tab user-logoff" data-content="logoff">
-          <a href="#">Logoff</a>
-        </li>
+        <li class="tab" data-content="home"><a href="#"><img class="nav-img" id="nav-home" src="images/home-normal.png"/></a></li>
+        <li class="tab" data-content="user"><a href="#"><img class="nav-img" id="nav-user" src="images/normal-cards.png"/></a></li>
+        <li class="tab" data-content="about"><a href="#"><img class="nav-img" id="nav-about" src="images/normal-about.png"/></a></li>
+        <li class="tab user-login" data-content="login"><a href="#"><img class="nav-img" id="nav-login" src="images/normal-login.png"/></a></li>
+        <li class="tab user-logoff" data-content="logoff"><a href="#">Logoff</a></li>
       </ul>
-
-
-    <!-- <button class="hamburger">&#9776;</button> -->
-    <!-- <button class="cross">&#735;</button> -->
   </header>
   <main>
     <section class="home view">
       <h2>Home View Page</h2>
-
       <form id="card-search">
-
         <label>Search by name: <input id="card-name-search" type="text" /></label>
-
-
         <a id="search-button"><img class="nav-img" id="search-img"src="images/normal-search.png"/></a>
       </form>
       <section id="main-search"><!-- search results go here --></section>
@@ -68,7 +56,6 @@
       <h2>User View - Collections Page</h2>
       <!-- If we add search on user collection, put form here. -->
       <section id="collect-list"><!-- User Collection goes here --></section>
-
     </section><!-- end .user .view -->
     <section class="login view">
       <h2>Login and Logoff View Page</h2>

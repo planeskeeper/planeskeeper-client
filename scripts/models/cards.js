@@ -26,8 +26,9 @@ var app = app || {};
         $('#main-search').append(app.cardView.searchTemplate(this)); 
       }
       if (output = 'user') { 
-        // $('#collect-list').append(app.CardView.userTemplate(this)); 
-        $('#collect-list').append(app.cardView.searchTemplate(this)); 
+        console.log('we are inside .toHtml for user collection page');
+        $('#collect-list').append(app.cardView.collectionTemplate(this)); 
+        // $('#collect-list').append(app.cardView.searchTemplate(this)); 
         // print it to the appropriate location
       } 
     } // if we had any more .toHtml conditions, they would go here. 
@@ -38,14 +39,16 @@ var app = app || {};
     if (action = 'add') { // after a search, user decided to add this card
       console.log(`We are in Card.edit with ${idChoice}, ${user_id}, ${action}`); 
       // does our DB cards table already have this card? If not, add it. 
-      $.get(`${app.ENVIROMENT.apiURL}/cards/${idChoice}`)
+      let payload = {}; 
+      // find the object in the Card.search array with matching api_card_id, return this object as payload
+      Card.search.map(cardObj => {
+        if(cardObj.api_card_id = idChoice) payload = cardObj;
+      }); 
+      payload.user_id = user_id; 
+      $.post(`${app.ENVIROMENT.apiURL}/collection`, payload)
         .then(results => {
           console.log(results);
-      }); // end $.get 
-      
-      // get the cards table id for this selected card. 
-      let card_id = 0; // make card_id = actual DB cards.id 
-      // upsert into users_cards for this user_id and card_id
+      }); // end $.post
     } else if (action = 'plus') { // from collections page, user says they got another copy of this card
       let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
       // upsert into users_cards for this user_id and card_id
@@ -54,15 +57,15 @@ var app = app || {};
       // if the amount in users_cards is only 1, send an error that they need to click delete
       // else update user_cards with 1 minus on amount value in the users_cards table 
     } else if (action = 'delete') { // remove this card from the user's collection
-    let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
-    // delete from users_cards table regardless of number of cards the user has
-    // ?? do we want to see if we should remove it from the cards table (because no one has this card now)?
-  } else { // we want to edit that is not an add, plus, minus, or delete
-    // what else do we edit? 
-    // return an error code since we've captured all condidtions?
-  }
+      let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
+      // delete from users_cards table regardless of number of cards the user has
+      // ?? do we want to see if we should remove it from the cards table (because no one has this card now)?
+    } else { // we want to edit that is not an add, plus, minus, or delete
+      // what else do we edit? 
+      // return an error code since we've captured all condidtions?
+    }
   
-}; // end Card.add funciton. 
+  }; // end Card.add funciton. 
 
   Card.loadAll = (source, rows) => {
     console.log(`we are in loadAll for ${source} `);
