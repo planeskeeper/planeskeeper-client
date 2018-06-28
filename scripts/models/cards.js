@@ -22,10 +22,10 @@ var app = app || {};
     if (output !== 'user' && output !== 'search') {
       app.errorCallback('Card.toHtml called with paramater not equal to "user" or "search" ');
     } else {
-      if (output = 'search') {
+      if (output === 'search') {
         $('#main-search').append(app.cardView.searchTemplate(this)); 
       }
-      if (output = 'user') { 
+      if (output === 'user') { 
         console.log('we are inside .toHtml for user collection page');
         $('#collect-list').append(app.cardView.collectionTemplate(this)); 
         // $('#collect-list').append(app.cardView.searchTemplate(this)); 

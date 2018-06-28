@@ -44,6 +44,7 @@ var app = app || {};
   
     } else { // (action === 'logoff')
       console.log('User Log-OFF'); 
+      app.user = ''; 
     } // end if/else login/logout
     }; // end initLoginPage
   
