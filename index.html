@@ -50,11 +50,19 @@
   </header>
   <main>
     <section class="home view">
-      <h2>Home View Page</h2>
-      <form id="card-search">
 
-        <label>Search by name: <input id="card-name-search" type="text" /></label>
-        <a id="search-button"><img class="nav-img" id="search-img"src="images/normal-search.png"/></a>
+      <!-- <h2>Home View Page</h2> -->
+
+      <form id="card-search">
+        <label class="fire">Search by name:
+          <input id="card-name-search" type="text" />
+        </label>
+
+
+        <a id="search-button">
+          <img class="nav-img" id="search-img" src="images/normal-search.png" />
+        </a>
+
       </form>
       
       <section id="main-search">
@@ -63,14 +71,23 @@
     </section>
     <!-- end .home .view -->
     <section class="user view">
-      <h2>User View - Collections Page</h2>
+      <span id="about" class="fire">Cards currently held</span>
+      <!-- <h2>User View - Collections Page</h2> -->
       <!-- If we add search on user collection, put form here. -->
 
+
+    </section>
+    <!-- end .user .view -->
+
+
       <section id="collect-list"><!-- User Collection goes here --></section>
-    </section><!-- end .user .view -->
+
 
     <section class="login view">
-      <h2>Login and Logoff View Page</h2>
+      <!-- <section id="loginId" class="login view"> -->
+      <!-- test -->
+      <!-- <span id="logText" class="fire">Sign up or login</span> -->
+      <h2 class="fire">Login and Logoff View Page</h2>
       <form>
         <label>New Username:</label>
         <input class="login-forms" id="new-username" type="text" name="username" required/>
@@ -84,8 +101,7 @@
     </section>
 
     <section class="about view">
-      <h2>About View Page</h2>
-      <h1 id="aboutHeader">Meet the Planes Keeper Dev team</h1>
+      <span id="about" class="fire">Meet the developer team</span>
       <div id="allCards">
         <!-- kelly card -->
         <div id="f1_container">
@@ -154,7 +170,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2018 PlanesKeeper</p>
+    <p id="copy">&copy; 2018 PlanesKeeper</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

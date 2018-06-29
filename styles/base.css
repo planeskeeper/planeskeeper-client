@@ -2,6 +2,11 @@
 h1 {
     font-size: 4em;
 }
+
+#about{
+    font-size: 2em;
+}
+
 #main-search {
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -10,9 +15,12 @@ h1 {
 body {
     color: aliceblue;
 }
-
+section{
+    min-height: 70vh;
+}
 @font-face {
     font-family: MagicTheGathering;
     src: url(assets/fonts/MAGIC.TTF);
     }
-    
+   
+
