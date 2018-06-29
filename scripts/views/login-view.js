@@ -40,7 +40,7 @@ var app = app || {};
       user.id = 1; 
       user.username = 'One User'; 
       app.user = user; 
-      app.Card.fetchAll(app.user.id); 
+      // app.Card.fetchAll(app.user.id); 
     //   now Card.user is an array of all this user's collection
       console.log('User logged in!'); 
       $('.user-login').html(app.user.username);

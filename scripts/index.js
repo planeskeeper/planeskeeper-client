@@ -26,7 +26,12 @@ var app = app || {};
     let link = `${$(this).data('content')}`; 
     console.log(` You clicked ${link}`);
     if (link === 'home') app.cardView.initIndexPage();
-    if (link === 'user') app.cardView.initUserPage(); 
+    if (link === 'user') { 
+      if (!app.user) app.cardView.initLoginPage('login'); 
+      else { 
+        app.Card.fetchAll(app.user.id);
+      }
+    }
     if (link === 'about') module.showOnly('about');
     if (link === 'login') app.cardView.initLoginPage('login'); 
     if (link === 'logoff') app.cardView.initLoginPage('logoff'); 

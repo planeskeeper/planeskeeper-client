@@ -36,7 +36,7 @@ var app = app || {};
   } // end prototype.toHtml
 
   Card.edit = function (idChoice, user_id, action) {
-    if (action = 'add') { // after a search, user decided to add this card
+    if (action === 'add') { // after a search, user decided to add this card
       console.log(`We are in Card.edit with ${idChoice}, ${user_id}, ${action}`); 
       // does our DB cards table already have this card? If not, add it. 
       let payload = {}; 
@@ -49,14 +49,23 @@ var app = app || {};
         .then(results => {
           console.log(results);
       }); // end $.post
-    } else if (action = 'plus') { // from collections page, user says they got another copy of this card
+    } else if (action === 'plus') { // from collections page, user says they got another copy of this card
+      console.log('we are in the plus condition of Card.edit'); 
       let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
       // upsert into users_cards for this user_id and card_id
-    } else if (action = 'minus') { // from collections page, user says they have 1 less of this card
+      let payload = {}; 
+      payload.user_id = user_id; 
+      payload.card_id = card_id; 
+      $.post(`${app.ENVIROMENT.apiURL}/collection`, payload)
+      .then(results => {
+        console.log(results);
+    }); // end $.post
+
+    } else if (action === 'minus') { // from collections page, user says they have 1 less of this card
       let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
       // if the amount in users_cards is only 1, send an error that they need to click delete
       // else update user_cards with 1 minus on amount value in the users_cards table 
-    } else if (action = 'delete') { // remove this card from the user's collection
+    } else if (action === 'delete') { // remove this card from the user's collection
       let card_id = idChoice; // assume we were passed the actual DB cards table id for this card
       // delete from users_cards table regardless of number of cards the user has
       // ?? do we want to see if we should remove it from the cards table (because no one has this card now)?
@@ -65,7 +74,9 @@ var app = app || {};
       // return an error code since we've captured all condidtions?
     }
   
-  }; // end Card.add funciton. 
+    // reload, from DB, the current user's list of cards. 
+    // Card.fetchAll(user_id); 
+  }; // end Card.edit funciton. 
 
   Card.loadAll = (source, rows) => {
     console.log(`we are in loadAll for ${source} `);
@@ -82,6 +93,8 @@ var app = app || {};
       if (source === 'search') Card.search = Card.tmp;
       // Card.tmp is destroyed once outside of .loadAll function 
     } // end if (paramater input error) - else instantiate and put in assigned list
+    if (source === 'user') app.cardView.initUserPage(); 
+
   } // end of Card.loadAll
 
   Card.fetchAll = (user) => {

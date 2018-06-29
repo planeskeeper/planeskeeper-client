@@ -30,11 +30,16 @@ var app = app || {};
         // but only if we are inside function(e) and not arrow func
         let idChoice = e.target.id; 
         // app.user.id & app.user.username is set some time before this, we hope. 
-        let action = 'add-card'; 
-        console.log(`On Card id: ${idChoice}`);
-        console.log(`For user: ${app.user.id}`); 
-        console.log(`Your action: ${action}`); 
-        app.Card.edit(idChoice, app.user.id, action); 
+        if (!app.user) {
+          $('#main-search').html('<h2>Sorry, You must login to add a card!'); }
+          else {
+            let action = 'add'; 
+            console.log(`On Card id: ${idChoice}`);
+            console.log(`For user: ${app.user.id}`); 
+            console.log(`Your action: ${action}`); 
+            app.Card.edit(idChoice, app.user.id, action); 
+          }
+
       }); // end listner for each card in search result list
     });
   }; // end getCArdsApi, which is our search-button handler
