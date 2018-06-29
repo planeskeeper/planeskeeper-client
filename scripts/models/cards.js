@@ -4,6 +4,7 @@ var app = app || {};
 (function(module){ // begin IIFE
 
   function Card(cardObj) { // Card object constructor
+    this.card_id = cardObj.card_id || 'search', 
     this.api_card_id = cardObj.id, 
     this.name = cardObj.name, 
     this.image_url = cardObj.imageUrl || cardObj.image_url || 'https://image.ibb.co/imTHKo/magic_card_back_no_preview.png', 
@@ -26,7 +27,6 @@ var app = app || {};
         $('#main-search').append(app.cardView.searchTemplate(this)); 
       }
       if (output === 'user') { 
-        console.log('we are inside .toHtml for user collection page');
         $('#collect-list').append(app.cardView.collectionTemplate(this)); 
         // $('#collect-list').append(app.cardView.searchTemplate(this)); 
         // print it to the appropriate location
@@ -78,8 +78,8 @@ var app = app || {};
         return 0; 
       }); // end of sort funciton. 
       Card.tmp = rows.map(cardObj => new Card(cardObj));
-      if (source = 'user') Card.user = Card.tmp;
-      if (source = 'search') Card.search = Card.tmp;
+      if (source === 'user') Card.user = Card.tmp;
+      if (source === 'search') Card.search = Card.tmp;
       // Card.tmp is destroyed once outside of .loadAll function 
     } // end if (paramater input error) - else instantiate and put in assigned list
   } // end of Card.loadAll
@@ -88,7 +88,8 @@ var app = app || {};
     console.log(`We are in Card.fetchAll for user: ${user}`);
     console.log(`Env apiUrl: ${app.ENVIROMENT.apiURL}`); 
     $.get(`${app.ENVIROMENT.apiURL}/collection/${user}`).then(results => {
-      console.log(`Card.fetch put results in app.Card.user`);
+      console.log(results); 
+      console.log(`Then Card.fetch puts results in app.Card.user`);
       Card.loadAll('user', results); 
     }).catch(console.error); 
   }; // end Card.fetchAll 

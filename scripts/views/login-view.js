@@ -36,16 +36,22 @@ var app = app || {};
     if( action === 'login') {
       console.log('User Login'); 
       // authenticate the user
-      let user = 1; 
+      let user = {}; 
+      user.id = 1; 
+      user.username = 'One User'; 
       app.user = user; 
-      app.Card.fetchAll(app.user); 
+      app.Card.fetchAll(app.user.id); 
     //   now Card.user is an array of all this user's collection
       console.log('User logged in!'); 
-  
+      $('.user-login').html(app.user.username);
+      $('.user-logoff').show(); 
     } else { // (action === 'logoff')
       console.log('User Log-OFF'); 
-      app.user = ''; 
+      app.user = {}; 
+      app.Card.user = []; 
+      $('.user-login').html('<a href="#"><img class="nav-img" id="nav-login" src="images/normal-login.png"/></a>');
+      $('.user-logoff').hide(); 
     } // end if/else login/logout
-    }; // end initLoginPage
+  }; // end initLoginPage
   
 })(app); // end IIFE
