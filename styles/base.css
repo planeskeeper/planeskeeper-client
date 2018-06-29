@@ -1,21 +1,12 @@
 *
-
-/* nav ul {    */
-      /* grid-auto-columns: ; */
-        /* text-align: center; */
-        /* padding: 0;
-        margin: 0;
-      }
-
 h1 {
-    text-align: center;
-    color: aliceblue;
-
+    font-size: 4em;
 }
-.card-template {
-    align-content:auto;
-    /* left:50%; 
-    top:50%; */
+
+#about{
+    font-size: 2em;
+}
+
 #main-search {
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -24,9 +15,12 @@ h1 {
 body {
     color: aliceblue;
 }
-
+section{
+    min-height: 70vh;
+}
 @font-face {
     font-family: MagicTheGathering;
     src: url(assets/fonts/MAGIC.TTF);
     }
-    
+   
+
