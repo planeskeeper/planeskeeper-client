@@ -26,7 +26,12 @@ var app = app || {};
     let link = `${$(this).data('content')}`; 
     console.log(` You clicked ${link}`);
     if (link === 'home') app.cardView.initIndexPage();
-    if (link === 'user') app.cardView.initUserPage(); 
+    if (link === 'user') { 
+      if (!app.user) app.cardView.initLoginPage('login'); 
+      else { 
+        app.Card.fetchAll(app.user.id);
+      }
+    }
     if (link === 'about') module.showOnly('about');
     if (link === 'login') app.cardView.initLoginPage('login'); 
     if (link === 'logoff') app.cardView.initLoginPage('logoff'); 
@@ -36,39 +41,18 @@ var app = app || {};
   // listner for actions on each card in search result
   
   $(document).ready(function () {
-    if (app.cardView.user) {
-      $('.user-login').html(app.cardView.user);
+    if (app.user) {
+      $('.user-login').html(app.user.username);
     } else { 
       $('.user-logoff').hide(); 
     }
     app.cardView.initIndexPage(); 
-
-    // module.showOnly('home'); 
   }); // end on document load
 
   module.errorCallback = errorCallback; 
 })(app); // End IIFE
 
-// $(document).ready(function () {
-
-//     $(".cross").hide();
-//     $(".menu").hide();
-//     $(".hamburger").click(function () {
-//         $(".menu").slideToggle("slow", function () {
-//             $(".hamburger").hide();
-//             $(".cross").show();
-//         });
-//     });
-
-//     $(".cross").click(function () {
-//         $(".menu").slideToggle("slow", function () {
-//             $(".cross").hide();
-//             $(".hamburger").show();
-//         });
-//     });
-
-// });
-
+// start of hover & click state on navigation. 
 $(function(){
   $("#nav-home").on({
    mouseenter: function(){
@@ -146,6 +130,7 @@ $(function(){
   },
 
   });
+// end of hover & click state on navigation. 
   
   
 });

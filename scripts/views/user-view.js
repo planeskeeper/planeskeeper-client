@@ -6,6 +6,11 @@ var app = app || {};
 
   module.cardView.initUserPage = () => {
     console.log('Show User Collection Page'); 
+    console.log('currently the search list has: ');
+    app.Card.search.map(a => console.log(a)); 
+    console.log('currently the user list has: ');
+    app.Card.user.map(a => console.log(a)); 
+    
     app.showOnly('user'); 
     $('#collect-list').html(''); // removes all cards displayed user cards. 
     app.Card.user.map(a => a.toHtml('user')); // put their collection on the page!
