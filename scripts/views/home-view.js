@@ -8,6 +8,7 @@ var app = app || {};
   cardView.initIndexPage = () => {
     console.log('init Index Page'); 
     app.showOnly('home'); 
+    $('#main-search').html('');
   }; // end cardView.initIndexPage 
   
   cardView.searchTemplate = cardObj => {
@@ -28,7 +29,7 @@ var app = app || {};
         // note - e.target.id is the same as $(this).attr('id')
         // but only if we are inside function(e) and not arrow func
         let idChoice = e.target.id; 
-        let user = 1; 
+        let user = app.user; 
         let action = 'add-card'; 
         console.log(`On Card id: ${idChoice}`);
         console.log(`For user: ${user}`); 

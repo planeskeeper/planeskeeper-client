@@ -36,12 +36,14 @@ var app = app || {};
   // listner for actions on each card in search result
   
   $(document).ready(function () {
-    // module.showOnly('home'); 
     if (app.cardView.user) {
       $('.user-login').html(app.cardView.user);
     } else { 
       $('.user-logoff').hide(); 
     }
+    app.cardView.initIndexPage(); 
+
+    // module.showOnly('home'); 
   }); // end on document load
 
   module.errorCallback = errorCallback; 
