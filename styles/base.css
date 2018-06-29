@@ -15,9 +15,9 @@ h1 {
 body {
     color: aliceblue;
 }
-section{
+/* section{
     min-height: 70vh;
-}
+} */
 @font-face {
     font-family: MagicTheGathering;
     src: url(assets/fonts/MAGIC.TTF);
